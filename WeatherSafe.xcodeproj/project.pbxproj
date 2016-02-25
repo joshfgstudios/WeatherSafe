@@ -14,6 +14,7 @@
 		036612071C7C6F4800E9FBED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 036612061C7C6F4800E9FBED /* Assets.xcassets */; };
 		0366120A1C7C6F4800E9FBED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036612081C7C6F4800E9FBED /* LaunchScreen.storyboard */; };
 		03E95B501C7E7E280089ADC0 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E95B4F1C7E7E280089ADC0 /* Weather.swift */; };
+		03F093181C7EA2E000A46DB6 /* GradientColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F093171C7EA2E000A46DB6 /* GradientColours.swift */; };
 		1FD43ABF70E34B00625A8505 /* Pods_WeatherSafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 546D00EF46163BC5BFF837D4 /* Pods_WeatherSafe.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		036612091C7C6F4800E9FBED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0366120B1C7C6F4800E9FBED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03E95B4F1C7E7E280089ADC0 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		03F093171C7EA2E000A46DB6 /* GradientColours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColours.swift; sourceTree = "<group>"; };
 		546D00EF46163BC5BFF837D4 /* Pods_WeatherSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F03653F66CBC1C674B85CD /* Pods-WeatherSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherSafe/Pods-WeatherSafe.release.xcconfig"; sourceTree = "<group>"; };
 		B75947319462C693DA9FE932 /* Pods-WeatherSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherSafe/Pods-WeatherSafe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		03E95B4D1C7E7DE60089ADC0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				03F093171C7EA2E000A46DB6 /* GradientColours.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				03E95B501C7E7E280089ADC0 /* Weather.swift in Sources */,
 				036612001C7C6F4800E9FBED /* AppDelegate.swift in Sources */,
 				03406F5E1C7E851D00AAA640 /* Constants.swift in Sources */,
+				03F093181C7EA2E000A46DB6 /* GradientColours.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

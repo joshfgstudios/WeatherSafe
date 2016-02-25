@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MapKit
 
 class ViewController: UIViewController {
 
@@ -15,10 +14,13 @@ class ViewController: UIViewController {
     //------------------
     @IBOutlet weak var lblCurrentTemp: UILabel!
     @IBOutlet weak var lblCityName: UILabel!
+    @IBOutlet weak var spinnerWeather: UIActivityIndicatorView!
+
     
     //Properties
     //------------------
     var weather: Weather!
+    let gradientColours = Colours()
     
     //Functions
     //------------------
@@ -26,14 +28,44 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         weather = Weather()
-        weather.downloadWeatherDetails { () -> () in
-            self.updateUI()
-        }
+    }
+        
+    override func viewDidAppear(animated: Bool) {
+        refreshData()
+        refreshBackgroundColours()
     }
     
     func updateUI() {
         lblCityName.text = weather.cityName
-        lblCurrentTemp.text = weather.currentTemp
+        lblCurrentTemp.text = "\(weather.currentTemp) °C"
+    }
+    
+    func refreshData() {
+        func startLoading() {
+            lblCityName.hidden = true
+            lblCurrentTemp.hidden = true
+            spinnerWeather.startAnimating()
+        }
+        
+        func loadingComplete() {
+            lblCityName.hidden = false
+            lblCurrentTemp.hidden = false
+            spinnerWeather.stopAnimating()
+        }
+        
+        startLoading()
+        
+        weather.downloadWeatherDetails { () -> () in
+            self.updateUI()
+            loadingComplete()
+        }
+    }
+    
+    func refreshBackgroundColours() {
+        view.backgroundColor = UIColor.clearColor()
+        let backgroundLayer = gradientColours.gradientLayer
+        backgroundLayer.frame = view.frame
+        view.layer.insertSublayer(backgroundLayer, atIndex: 0)
     }
 
 

@@ -17,7 +17,7 @@ class Weather {
     
     var cityName: String {
         if _cityName == nil {
-            _cityName = "Err"
+            _cityName = "-"
         }
         return _cityName
     }
@@ -42,13 +42,15 @@ class Weather {
         let url = NSURL(string: _weatherURL)!
         
         //Alamofire request
+        //-----------------
         Alamofire.request(.GET, url).responseJSON { response in
          
             let result = response.result
             
             //Top level dictionary
             if let dict = result.value as? Dictionary<String, AnyObject> {
-                
+
+                //Individual values
                 if let name = dict["name"] as? String {
                     self._cityName = name
                 }
@@ -62,6 +64,7 @@ class Weather {
             }
             completed()
         }
+        //--------------------
         //End Alamofire request
         
     }
