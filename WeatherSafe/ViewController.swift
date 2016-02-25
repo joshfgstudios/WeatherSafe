@@ -7,17 +7,33 @@
 //
 
 import UIKit
+import MapKit
 
 class ViewController: UIViewController {
 
+    //Outlets
+    //------------------
+    @IBOutlet weak var lblCurrentTemp: UILabel!
+    @IBOutlet weak var lblCityName: UILabel!
+    
+    //Properties
+    //------------------
+    var weather: Weather!
+    
+    //Functions
+    //------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        weather = Weather()
+        weather.downloadWeatherDetails { () -> () in
+            self.updateUI()
+        }
+    }
+    
+    func updateUI() {
+        lblCityName.text = weather.cityName
+        lblCurrentTemp.text = weather.currentTemp
     }
 
 
