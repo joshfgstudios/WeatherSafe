@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     //Properties
     //------------------
     var weather: Weather!
-    let gradientColours = Colours()
+    var gradientColours: Colours!
     
     //Functions
     //------------------
@@ -62,6 +62,7 @@ class ViewController: UIViewController {
     }
     
     func refreshBackgroundColours() {
+        gradientColours = Colours(top: warmTop, bottom: warmBottom)
         view.backgroundColor = UIColor.clearColor()
         let backgroundLayer = gradientColours.gradientLayer
         backgroundLayer.frame = view.frame

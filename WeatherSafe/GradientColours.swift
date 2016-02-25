@@ -11,14 +11,11 @@ import UIKit
 
 class Colours {
     
-    let hotTop = UIColor(red: 250.0/255, green: 134.0/255, blue: 31.0/255, alpha: 1.0).CGColor
-    let hotBottom = UIColor(red: 252.0/255, green: 193.0/255, blue: 37.0/255, alpha: 1.0).CGColor
-    
     let gradientLayer: CAGradientLayer!
     
-    init() {
+    init(top: CGColor, bottom: CGColor) {
         gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [hotTop, hotBottom]
+        gradientLayer.colors = [top, bottom]
         gradientLayer.locations = [0.0, 1.0]
     }
 }
