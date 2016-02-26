@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     //------------------
     @IBOutlet weak var lblCurrentTemp: UILabel!
     @IBOutlet weak var lblCityName: UILabel!
-    @IBOutlet weak var spinnerWeather: UIActivityIndicatorView!
+    @IBOutlet weak var spinnerRefresh: FGActivityIndicator!
 
     
     //Properties
@@ -43,13 +43,14 @@ class ViewController: UIViewController {
         func startLoading() {
             lblCityName.hidden = true
             lblCurrentTemp.hidden = true
-            spinnerWeather.startAnimating()
+            spinnerRefresh.playLoadingAnimation()
+            spinnerRefresh.startAnimating()
         }
         
         func loadingComplete() {
             lblCityName.hidden = false
             lblCurrentTemp.hidden = false
-            spinnerWeather.stopAnimating()
+            spinnerRefresh.stopLoadingAnimation()
         }
         
         startLoading()

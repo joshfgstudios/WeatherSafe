@@ -28,28 +28,41 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Teq-hV-Mrh">
-                                <rect key="frame" x="282" y="281" width="37" height="37"/>
-                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="indicator3" translatesAutoresizingMaskIntoConstraints="NO" id="f6a-BB-Qee" customClass="FGActivityIndicator" customModule="WeatherSafe" customModuleProvider="target">
+                                <rect key="frame" x="275" y="275" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="04N-wF-HrO"/>
+                                    <constraint firstAttribute="width" constant="50" id="a9D-de-pLw"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40647653639999998" blue="0.21181528459999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f6a-BB-Qee" secondAttribute="bottom" constant="20" id="1BQ-3g-Kt7"/>
+                            <constraint firstItem="f6a-BB-Qee" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5eD-DG-5fy"/>
                             <constraint firstItem="995-P8-GEE" firstAttribute="top" secondItem="Q8l-lA-3H1" secondAttribute="bottom" constant="8" id="VaV-CU-XkJ"/>
-                            <constraint firstItem="Teq-hV-Mrh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aAs-7h-UaN"/>
                             <constraint firstItem="Q8l-lA-3H1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="fHN-Pl-NcI"/>
-                            <constraint firstItem="Teq-hV-Mrh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kyE-g5-aL6"/>
+                            <constraint firstItem="f6a-BB-Qee" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j6N-Z0-isq"/>
                             <constraint firstItem="995-P8-GEE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mg9-7V-5Ny"/>
                             <constraint firstItem="Q8l-lA-3H1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oLp-g6-4Eo"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1BQ-3g-Kt7"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="lblCityName" destination="995-P8-GEE" id="DJA-fe-5tA"/>
                         <outlet property="lblCurrentTemp" destination="Q8l-lA-3H1" id="k5Z-Xf-oqD"/>
-                        <outlet property="spinnerWeather" destination="Teq-hV-Mrh" id="kws-W6-3GF"/>
+                        <outlet property="spinnerRefresh" destination="f6a-BB-Qee" id="jXv-G1-HyK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="indicator3" width="150" height="150"/>
+    </resources>
 </document>
