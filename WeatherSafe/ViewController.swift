@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     //Properties
     //------------------
     var weather: Weather!
-    var gradientColours: Colours!
+    var gradientColours = Colours(top: coldBottom, bottom: hotTop)
     
     //Functions
     //------------------
@@ -32,7 +32,6 @@ class ViewController: UIViewController {
         
     override func viewDidAppear(animated: Bool) {
         refreshData()
-        refreshBackgroundColours()
     }
     
     func updateUI() {
@@ -57,14 +56,25 @@ class ViewController: UIViewController {
         
         weather.downloadWeatherDetails { () -> () in
             self.updateUI()
+            self.refreshBackgroundColours()
             loadingComplete()
         }
     }
     
     func refreshBackgroundColours() {
-        gradientColours = Colours(top: warmTop, bottom: warmBottom)
-        view.backgroundColor = UIColor.clearColor()
+        if Int(weather.currentTemp) >= 32 {
+            gradientColours = Colours(top: hotTop, bottom: hotBottom)
+        } else if Int(weather.currentTemp) >= 20 {
+            gradientColours = Colours(top: warmTop, bottom: warmBottom)
+        } else if Int(weather.currentTemp) >= 14 {
+            gradientColours = Colours(top: coolTop, bottom: coolBottom)
+        } else {
+            gradientColours = Colours(top: coldTop, bottom: coldBottom)
+        }
+        
         let backgroundLayer = gradientColours.gradientLayer
+        backgroundLayer.removeFromSuperlayer()
+        view.backgroundColor = UIColor.clearColor()
         backgroundLayer.frame = view.frame
         view.layer.insertSublayer(backgroundLayer, atIndex: 0)
     }
