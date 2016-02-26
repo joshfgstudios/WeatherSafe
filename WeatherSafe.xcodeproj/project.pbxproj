@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03406F5E1C7E851D00AAA640 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03406F5D1C7E851D00AAA640 /* Constants.swift */; };
+		035888021C803F280057455A /* FGActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035888011C803F280057455A /* FGActivityIndicator.swift */; };
 		036612001C7C6F4800E9FBED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036611FF1C7C6F4800E9FBED /* AppDelegate.swift */; };
 		036612021C7C6F4800E9FBED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036612011C7C6F4800E9FBED /* ViewController.swift */; };
 		036612051C7C6F4800E9FBED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036612031C7C6F4800E9FBED /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		03406F5D1C7E851D00AAA640 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		035888011C803F280057455A /* FGActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FGActivityIndicator.swift; sourceTree = "<group>"; };
 		036611FC1C7C6F4800E9FBED /* WeatherSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		036611FF1C7C6F4800E9FBED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		036612011C7C6F4800E9FBED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				03F093171C7EA2E000A46DB6 /* GradientColours.swift */,
+				035888011C803F280057455A /* FGActivityIndicator.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				036612021C7C6F4800E9FBED /* ViewController.swift in Sources */,
+				035888021C803F280057455A /* FGActivityIndicator.swift in Sources */,
 				03E95B501C7E7E280089ADC0 /* Weather.swift in Sources */,
 				036612001C7C6F4800E9FBED /* AppDelegate.swift in Sources */,
 				03406F5E1C7E851D00AAA640 /* Constants.swift in Sources */,
