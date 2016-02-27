@@ -40,10 +40,6 @@ class FGActivityIndicator: UIImageView {
     }
     
     func stopLoadingAnimation() {
-        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
-            self.alpha = 1.0
-            self.layoutIfNeeded()
-            }, completion: nil)
             self.image = UIImage(named: "indicator1")
             self.animationImages = nil
             self.stopAnimating()

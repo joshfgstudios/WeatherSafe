@@ -39,6 +39,10 @@ class ViewController: UIViewController {
         lblCurrentTemp.text = "\(weather.currentTemp) °C"
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     func refreshData() {
         func startLoading() {
             lblCityName.hidden = true
