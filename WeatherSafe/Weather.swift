@@ -14,6 +14,8 @@ class Weather {
     private var _cityName: String!
     private var _weatherURL: String!
     private var _currentTemp: String!
+    private var _windSpeed: String!
+    private var _country: String!
     
     var cityName: String {
         if _cityName == nil {
@@ -33,8 +35,22 @@ class Weather {
         return _currentTemp
     }
     
+    var windSpeed: String {
+        if _windSpeed == nil {
+            _windSpeed = "-"
+        }
+        return _windSpeed
+    }
+    
+    var country: String {
+        if _country == nil {
+            _country = "-"
+        }
+        return _country
+    }
+    
     init() {
-        self._weatherURL = "\(URL_BASE)\(URL_CITY_ID)\(URL_PARAMETERS)\(API_KEY)"
+        self._weatherURL = "\(URL_BASE)\(URL_DAILY)\(URL_CITY_ID)\(URL_PARAMETERS)\(API_KEY)"
     }
     
     func downloadWeatherDetails(completed: DownloadComplete) {
@@ -55,9 +71,21 @@ class Weather {
                     self._cityName = name
                 }
                 
+                if let sys = dict["sys"] as? Dictionary<String, AnyObject> {
+                    if let country = sys["country"] as? String {
+                        self._country = country
+                    }
+                }
+                
                 if let main = dict["main"] as? Dictionary<String, AnyObject> {
                     if let temp = main["temp"] as? Int {
                         self._currentTemp = "\(temp)"
+                    }
+                }
+                
+                if let wind = dict["wind"] as? Dictionary<String, AnyObject> {
+                    if let speed = wind["speed"] as? Int {
+                        self._windSpeed = "\(speed)"
                     }
                 }
                 

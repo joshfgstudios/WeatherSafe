@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="995-P8-GEE">
-                                <rect key="frame" x="272" y="255" width="56" height="31"/>
+                                <rect key="frame" x="272" y="227" width="56" height="31"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -30,40 +30,67 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8l-lA-3H1">
-                                <rect key="frame" x="255" y="140" width="91" height="107"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="78"/>
+                                <rect key="frame" x="254" y="120" width="93" height="107"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="78"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 KPH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sL2-Ug-pod">
+                                <rect key="frame" x="234" y="289" width="41" height="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="windspeed" translatesAutoresizingMaskIntoConstraints="NO" id="67I-SI-4cm">
+                                <rect key="frame" x="235" y="310" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dg6-1a-ZH3"/>
+                                    <constraint firstAttribute="width" constant="40" id="pxH-QB-BGm"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40647653639999998" blue="0.21181528459999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f6a-BB-Qee" secondAttribute="bottom" constant="20" id="1BQ-3g-Kt7"/>
                             <constraint firstItem="f6a-BB-Qee" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5eD-DG-5fy"/>
-                            <constraint firstItem="995-P8-GEE" firstAttribute="top" secondItem="Q8l-lA-3H1" secondAttribute="bottom" constant="8" id="VaV-CU-XkJ"/>
-                            <constraint firstItem="Q8l-lA-3H1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="fHN-Pl-NcI"/>
+                            <constraint firstItem="sL2-Ug-pod" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PcU-Z4-MPH"/>
+                            <constraint firstItem="995-P8-GEE" firstAttribute="top" secondItem="Q8l-lA-3H1" secondAttribute="bottom" id="VaV-CU-XkJ"/>
+                            <constraint firstItem="995-P8-GEE" firstAttribute="top" secondItem="Q8l-lA-3H1" secondAttribute="bottom" id="cuE-b1-HMq"/>
+                            <constraint firstItem="67I-SI-4cm" firstAttribute="centerX" secondItem="sL2-Ug-pod" secondAttribute="centerX" id="dU5-0Q-enf"/>
+                            <constraint firstItem="Q8l-lA-3H1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="fHN-Pl-NcI"/>
+                            <constraint firstItem="f6a-BB-Qee" firstAttribute="leading" secondItem="sL2-Ug-pod" secondAttribute="trailing" id="gdW-ud-2on"/>
                             <constraint firstItem="f6a-BB-Qee" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j6N-Z0-isq"/>
                             <constraint firstItem="995-P8-GEE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mg9-7V-5Ny"/>
                             <constraint firstItem="Q8l-lA-3H1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oLp-g6-4Eo"/>
+                            <constraint firstItem="67I-SI-4cm" firstAttribute="top" secondItem="sL2-Ug-pod" secondAttribute="bottom" constant="1" id="q6T-9d-hex"/>
+                            <constraint firstItem="sL2-Ug-pod" firstAttribute="top" secondItem="Q8l-lA-3H1" secondAttribute="bottom" constant="62" id="qc2-oq-feT"/>
+                            <constraint firstItem="sL2-Ug-pod" firstAttribute="top" secondItem="Q8l-lA-3H1" secondAttribute="bottom" constant="62" id="vTT-8M-Q8V"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="VaV-CU-XkJ"/>
+                                <exclude reference="PcU-Z4-MPH"/>
+                                <exclude reference="qc2-oq-feT"/>
                                 <exclude reference="1BQ-3g-Kt7"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="constrYCurrentTempLabel" destination="fHN-Pl-NcI" id="kcZ-JP-M6n"/>
+                        <outlet property="imgWindSpeed" destination="67I-SI-4cm" id="z5a-Xx-mV0"/>
                         <outlet property="lblCityName" destination="995-P8-GEE" id="DJA-fe-5tA"/>
                         <outlet property="lblCurrentTemp" destination="Q8l-lA-3H1" id="k5Z-Xf-oqD"/>
+                        <outlet property="lblWindSpeed" destination="sL2-Ug-pod" id="Ktb-LB-4sg"/>
                         <outlet property="spinnerRefresh" destination="f6a-BB-Qee" id="jXv-G1-HyK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="298" y="541"/>
         </scene>
     </scenes>
     <resources>
         <image name="indicator3" width="150" height="150"/>
+        <image name="windspeed" width="100" height="100"/>
     </resources>
 </document>

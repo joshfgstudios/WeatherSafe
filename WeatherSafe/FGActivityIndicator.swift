@@ -21,7 +21,6 @@ class FGActivityIndicator: UIImageView {
     
     func playLoadingAnimation() {
         self.alpha = 1.0
-        self.hidden = false
         self.image = UIImage(named: "indicator1")
         self.animationImages = nil
         

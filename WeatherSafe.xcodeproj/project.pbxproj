@@ -48,14 +48,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03406F5C1C7E851100AAA640 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				03406F5D1C7E851D00AAA640 /* Constants.swift */,
-			);
-			name = Utils;
-			sourceTree = "<group>";
-		};
 		036611F31C7C6F4800E9FBED = {
 			isa = PBXGroup;
 			children = (
@@ -80,7 +72,6 @@
 				03E95B4C1C7E7DE10089ADC0 /* Model */,
 				03E95B4D1C7E7DE60089ADC0 /* View */,
 				03E95B4E1C7E7DE90089ADC0 /* Controller */,
-				03406F5C1C7E851100AAA640 /* Utils */,
 				036611FF1C7C6F4800E9FBED /* AppDelegate.swift */,
 				036612031C7C6F4800E9FBED /* Main.storyboard */,
 				036612061C7C6F4800E9FBED /* Assets.xcassets */,
@@ -94,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				03E95B4F1C7E7E280089ADC0 /* Weather.swift */,
+				03406F5D1C7E851D00AAA640 /* Constants.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
