@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblCurrentTemp: UILabel!
     @IBOutlet weak var lblCityName: UILabel!
     @IBOutlet weak var spinnerRefresh: FGActivityIndicator!
+    @IBOutlet weak var constrYCurrentTempLabel: NSLayoutConstraint!
 
     
     //Properties
@@ -31,6 +32,11 @@ class ViewController: UIViewController {
     }
         
     override func viewDidAppear(animated: Bool) {
+        //Layout
+        constrYCurrentTempLabel.constant -= view.bounds.height / 24
+        lblCityName.alpha = 0.0
+        lblCurrentTemp.alpha = 0.0
+        
         refreshData()
     }
     
@@ -44,26 +50,30 @@ class ViewController: UIViewController {
     }
     
     func refreshData() {
-        func startLoading() {
-            lblCityName.hidden = true
-            lblCurrentTemp.hidden = true
-            spinnerRefresh.playLoadingAnimation()
-            spinnerRefresh.startAnimating()
-        }
-        
-        func loadingComplete() {
-            lblCityName.hidden = false
-            lblCurrentTemp.hidden = false
-            spinnerRefresh.stopLoadingAnimation()
-        }
-        
         startLoading()
         
         weather.downloadWeatherDetails { () -> () in
             self.updateUI()
             self.refreshBackgroundColours()
-            loadingComplete()
+
+            NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "loadingComplete", userInfo: nil, repeats: false)
+            //loadingComplete()
         }
+    }
+    
+    func startLoading() {
+        spinnerRefresh.playLoadingAnimation()
+        spinnerRefresh.startAnimating()
+    }
+    
+    func loadingComplete() {
+        spinnerRefresh.stopLoadingAnimation()
+        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            self.lblCityName.alpha = 1.0
+            self.lblCurrentTemp.alpha = 1.0
+            self.constrYCurrentTempLabel.constant += self.view.bounds.height / 24
+            self.view.layoutIfNeeded()
+            }, completion: nil)
     }
     
     func refreshBackgroundColours() {

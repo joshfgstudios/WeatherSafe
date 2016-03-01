@@ -43,8 +43,9 @@ class FGActivityIndicator: UIImageView {
             self.image = UIImage(named: "indicator1")
             self.animationImages = nil
             self.stopAnimating()
-            self.hidden = true
-
+        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+            self.alpha = 0.0
+            }, completion: nil)
     }
 
 }
