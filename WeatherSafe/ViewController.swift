@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     //Outlets
     //------------------
     @IBOutlet weak var lblCurrentTemp: UILabel!
+    @IBOutlet weak var lblMinTemp: UILabel!
+    @IBOutlet weak var lblMaxTemp: UILabel!
     @IBOutlet weak var lblCityName: UILabel!
     @IBOutlet weak var lblWindSpeed: UILabel!
     @IBOutlet weak var lblHumidity: UILabel!
@@ -45,6 +47,8 @@ class ViewController: UIViewController {
         constrYHumidityLabel.constant += view.bounds.height / 12
         lblCityName.alpha = 0.0
         lblCurrentTemp.alpha = 0.0
+        lblMinTemp.alpha = 0.0
+        lblMaxTemp.alpha = 0.0
         lblWindSpeed.alpha = 0.0
         lblHumidity.alpha = 0.0
         lblDescription.alpha = 0.0
@@ -63,6 +67,8 @@ class ViewController: UIViewController {
     func updateUI() {
         lblCityName.text = "\(weather.cityName), \(weather.country)"
         lblCurrentTemp.text = "\(weather.currentTemp) °C"
+        lblMinTemp.text = "\(weather.minTemp)"
+        lblMaxTemp.text = "\(weather.maxTemp)"
         lblWindSpeed.text = "\(weather.windSpeed) KPH"
         lblHumidity.text = "\(weather.humidity) %"
         lblDescription.text = "\(weather.description)"
@@ -87,6 +93,8 @@ class ViewController: UIViewController {
         UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
             self.lblCityName.alpha = 0.65
             self.lblCurrentTemp.alpha = 1.0
+            self.lblMinTemp.alpha = 1.0
+            self.lblMaxTemp.alpha = 1.0
             self.lblWindSpeed.alpha = 1.0
             self.lblHumidity.alpha = 1.0
             self.lblDescription.alpha = 1.0

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -54,12 +55,6 @@
                                     <constraint firstAttribute="width" constant="40" id="pxH-QB-BGm"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="weather desc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIV-F0-6Tl">
-                                <rect key="frame" x="248" y="88" width="104" height="24"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="humidity" translatesAutoresizingMaskIntoConstraints="NO" id="Gru-6F-7f6">
                                 <rect key="frame" x="318" y="310" width="40" height="40"/>
                                 <constraints>
@@ -67,13 +62,34 @@
                                     <constraint firstAttribute="width" constant="40" id="LK9-d7-t4E"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="weather desc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIV-F0-6Tl">
+                                <rect key="frame" x="248" y="88" width="104" height="24"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JDE-gA-eFN">
+                                <rect key="frame" x="150" y="300" width="45" height="51"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="37"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGU-6m-oya">
+                                <rect key="frame" x="398" y="300" width="45" height="51"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="37"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40647653639999998" blue="0.21181528459999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="67I-SI-4cm" firstAttribute="leading" secondItem="JDE-gA-eFN" secondAttribute="trailing" constant="40" id="0K5-OY-2zV"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f6a-BB-Qee" secondAttribute="bottom" constant="20" id="1BQ-3g-Kt7"/>
                             <constraint firstItem="guA-jl-UpW" firstAttribute="top" secondItem="Q8l-lA-3H1" secondAttribute="bottom" constant="62" id="5O7-to-JNC"/>
                             <constraint firstItem="f6a-BB-Qee" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5eD-DG-5fy"/>
                             <constraint firstItem="Q8l-lA-3H1" firstAttribute="top" secondItem="TIV-F0-6Tl" secondAttribute="bottom" constant="8" id="Abl-jD-UUC"/>
+                            <constraint firstItem="nGU-6m-oya" firstAttribute="centerY" secondItem="Gru-6F-7f6" secondAttribute="centerY" constant="-5" id="Gb9-4x-uzH"/>
+                            <constraint firstItem="nGU-6m-oya" firstAttribute="leading" secondItem="Gru-6F-7f6" secondAttribute="trailing" constant="40" id="N46-lq-Dz5"/>
                             <constraint firstItem="sL2-Ug-pod" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PcU-Z4-MPH"/>
                             <constraint firstItem="guA-jl-UpW" firstAttribute="leading" secondItem="f6a-BB-Qee" secondAttribute="trailing" id="PhL-fK-80L"/>
                             <constraint firstItem="Gru-6F-7f6" firstAttribute="centerX" secondItem="guA-jl-UpW" secondAttribute="centerX" id="VY6-js-7cv"/>
@@ -84,15 +100,18 @@
                             <constraint firstItem="f6a-BB-Qee" firstAttribute="leading" secondItem="sL2-Ug-pod" secondAttribute="trailing" id="gdW-ud-2on"/>
                             <constraint firstItem="TIV-F0-6Tl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hvn-1Y-hV7"/>
                             <constraint firstItem="f6a-BB-Qee" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j6N-Z0-isq"/>
+                            <constraint firstItem="67I-SI-4cm" firstAttribute="centerY" secondItem="JDE-gA-eFN" secondAttribute="centerY" constant="5" id="jBI-mk-YC1"/>
                             <constraint firstItem="995-P8-GEE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mg9-7V-5Ny"/>
                             <constraint firstItem="Q8l-lA-3H1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oLp-g6-4Eo"/>
                             <constraint firstItem="67I-SI-4cm" firstAttribute="top" secondItem="sL2-Ug-pod" secondAttribute="bottom" constant="1" id="q6T-9d-hex"/>
                             <constraint firstItem="sL2-Ug-pod" firstAttribute="top" secondItem="Q8l-lA-3H1" secondAttribute="bottom" constant="62" id="qc2-oq-feT"/>
                             <constraint firstItem="sL2-Ug-pod" firstAttribute="top" secondItem="Q8l-lA-3H1" secondAttribute="bottom" constant="62" id="vTT-8M-Q8V"/>
                             <constraint firstItem="Gru-6F-7f6" firstAttribute="top" secondItem="guA-jl-UpW" secondAttribute="bottom" constant="1" id="w87-rw-OMW"/>
+                            <constraint firstItem="JDE-gA-eFN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="z5G-rh-Cu4"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="z5G-rh-Cu4"/>
                                 <exclude reference="VaV-CU-XkJ"/>
                                 <exclude reference="PcU-Z4-MPH"/>
                                 <exclude reference="qc2-oq-feT"/>
@@ -110,6 +129,8 @@
                         <outlet property="lblCurrentTemp" destination="Q8l-lA-3H1" id="k5Z-Xf-oqD"/>
                         <outlet property="lblDescription" destination="TIV-F0-6Tl" id="xEL-l8-bcx"/>
                         <outlet property="lblHumidity" destination="guA-jl-UpW" id="2AP-nc-ebK"/>
+                        <outlet property="lblMaxTemp" destination="nGU-6m-oya" id="NcK-Db-8SI"/>
+                        <outlet property="lblMinTemp" destination="JDE-gA-eFN" id="iKY-Oe-sXR"/>
                         <outlet property="lblWindSpeed" destination="sL2-Ug-pod" id="Ktb-LB-4sg"/>
                         <outlet property="spinnerRefresh" destination="f6a-BB-Qee" id="jXv-G1-HyK"/>
                     </connections>
