@@ -15,9 +15,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblCurrentTemp: UILabel!
     @IBOutlet weak var lblCityName: UILabel!
     @IBOutlet weak var lblWindSpeed: UILabel!
+    @IBOutlet weak var lblHumidity: UILabel!
     @IBOutlet weak var spinnerRefresh: FGActivityIndicator!
     @IBOutlet weak var constrYCurrentTempLabel: NSLayoutConstraint!
     @IBOutlet weak var imgWindSpeed: UIImageView!
+    @IBOutlet weak var imgHumidity: UIImageView!
+    @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var constrYWindSpeedLabel: NSLayoutConstraint!
+    @IBOutlet weak var constrYHumidityLabel: NSLayoutConstraint!
 
     
     //Properties
@@ -36,24 +41,31 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         //Layout
         constrYCurrentTempLabel.constant -= view.bounds.height / 24
+        constrYWindSpeedLabel.constant += view.bounds.height / 12
+        constrYHumidityLabel.constant += view.bounds.height / 12
         lblCityName.alpha = 0.0
         lblCurrentTemp.alpha = 0.0
         lblWindSpeed.alpha = 0.0
+        lblHumidity.alpha = 0.0
+        lblDescription.alpha = 0.0
         imgWindSpeed.alpha = 0.0
+        imgHumidity.alpha = 0.0
     }
         
     override func viewDidAppear(animated: Bool) {
         refreshData()
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     func updateUI() {
         lblCityName.text = "\(weather.cityName), \(weather.country)"
         lblCurrentTemp.text = "\(weather.currentTemp) °C"
         lblWindSpeed.text = "\(weather.windSpeed) KPH"
-    }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+        lblHumidity.text = "\(weather.humidity) %"
+        lblDescription.text = "\(weather.description)"
     }
     
     func refreshData() {
@@ -68,7 +80,6 @@ class ViewController: UIViewController {
     
     func startLoading() {
         spinnerRefresh.playLoadingAnimation()
-        spinnerRefresh.startAnimating()
     }
     
     func loadingComplete() {
@@ -77,8 +88,13 @@ class ViewController: UIViewController {
             self.lblCityName.alpha = 0.65
             self.lblCurrentTemp.alpha = 1.0
             self.lblWindSpeed.alpha = 1.0
+            self.lblHumidity.alpha = 1.0
+            self.lblDescription.alpha = 1.0
             self.imgWindSpeed.alpha = 1.0
+            self.imgHumidity.alpha = 1.0
             self.constrYCurrentTempLabel.constant += self.view.bounds.height / 24
+            self.constrYWindSpeedLabel.constant -= self.view.bounds.height / 12
+            self.constrYHumidityLabel.constant -= self.view.bounds.height / 12
             self.view.layoutIfNeeded()
             }, completion: nil)
     }

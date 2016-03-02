@@ -16,6 +16,9 @@ class Weather {
     private var _currentTemp: String!
     private var _windSpeed: String!
     private var _country: String!
+    private var _icon: String!
+    private var _description: String!
+    private var _humidity: String!
     
     var cityName: String {
         if _cityName == nil {
@@ -47,6 +50,27 @@ class Weather {
             _country = "-"
         }
         return _country
+    }
+    
+    var icon: String {
+        if _icon == nil {
+            _icon = "01d"
+        }
+        return _icon
+    }
+    
+    var description: String {
+        if _description == nil {
+            _description = "Clear sky"
+        }
+        return _description.capitalizedString
+    }
+    
+    var humidity: String {
+        if _humidity == nil {
+            _humidity = "0"
+        }
+        return _humidity
     }
     
     init() {
@@ -81,11 +105,25 @@ class Weather {
                     if let temp = main["temp"] as? Int {
                         self._currentTemp = "\(temp)"
                     }
+                    
+                    if let humidity = main["humidity"] as? Int {
+                        self._humidity = "\(humidity)"
+                    }
                 }
                 
                 if let wind = dict["wind"] as? Dictionary<String, AnyObject> {
                     if let speed = wind["speed"] as? Int {
                         self._windSpeed = "\(speed)"
+                    }
+                }
+                
+                if let weather = dict["weather"] as? Dictionary<String, AnyObject> {
+                    if let icon = weather["icon"] as? String {
+                        self._icon = icon
+                    }
+                    
+                    if let description = weather["description"] as? String {
+                        self._description = description
                     }
                 }
                 
