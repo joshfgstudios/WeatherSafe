@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     //------------------
     @IBOutlet weak var lblCurrentTemp: UILabel!
     @IBOutlet weak var lblMinTemp: UILabel!
+    @IBOutlet weak var lblL: UILabel!
+    @IBOutlet weak var lblH: UILabel!
     @IBOutlet weak var lblMaxTemp: UILabel!
     @IBOutlet weak var lblCityName: UILabel!
     @IBOutlet weak var lblWindSpeed: UILabel!
@@ -49,6 +51,8 @@ class ViewController: UIViewController {
         lblCurrentTemp.alpha = 0.0
         lblMinTemp.alpha = 0.0
         lblMaxTemp.alpha = 0.0
+        lblL.alpha = 0.0
+        lblH.alpha = 0.0
         lblWindSpeed.alpha = 0.0
         lblHumidity.alpha = 0.0
         lblDescription.alpha = 0.0
@@ -95,6 +99,8 @@ class ViewController: UIViewController {
             self.lblCurrentTemp.alpha = 1.0
             self.lblMinTemp.alpha = 1.0
             self.lblMaxTemp.alpha = 1.0
+            self.lblL.alpha = 1.0
+            self.lblH.alpha = 1.0
             self.lblWindSpeed.alpha = 1.0
             self.lblHumidity.alpha = 1.0
             self.lblDescription.alpha = 1.0
